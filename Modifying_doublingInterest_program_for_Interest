@@ -1,0 +1,29 @@
+// Modify the program from this section so that the user can supply the interest rate. 
+// For very small interest rates, it may take a very long time for the balance to double. 
+// Assume the user can't wait for more than twenty years. 
+// Stop adding interest when the balance has doubled or twenty years have elapsed.
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{  
+   const double INITIAL_BALANCE = 10000;
+   const double TARGET = 2 * INITIAL_BALANCE;
+
+   double balance = INITIAL_BALANCE;
+   int year = 0;
+   
+   cout << "Interest rate in percent: " << endl;
+   double rate; 
+   cin >> rate;
+
+   // Count the years required for the investment to double
+   /* Your code goes here */
+   
+   cout << "Year: " << year << endl;
+   cout << "Balance: " << balance << endl;
+
+   return 0;
+}
