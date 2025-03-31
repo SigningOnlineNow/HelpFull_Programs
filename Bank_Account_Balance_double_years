@@ -1,0 +1,40 @@
+// Show how many years it takes for the bank account balance to double.
+// Suppose we add a fixed amount of money into our bank account at the beginning of every year. 
+// Modify the program from this section to show how many years it takes for the balance to double.
+// Given the annual contributions and the interest.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{  
+   const double RATE = 5;
+   const double INITIAL_BALANCE = 10000;
+   const double TARGET = 2 * INITIAL_BALANCE;
+   
+   cout << "Annual contribution: " << endl;
+   double contribution; 
+   cin >> contribution;
+
+   double balance = INITIAL_BALANCE;
+   int year = 0;
+
+   // Add annual contribution, but not in year 0
+   while (balance < TARGET)
+{
+   year++;
+   balance += balance * (RATE / 100); // 1) Add interest first
+
+   if (balance < TARGET)
+   {
+      balance += contribution;        // 2) If still below target, add contribution
+   }
+}
+
+
+
+   cout << "Year: " << year << endl;
+   cout << "Balance: " << balance << endl;
+
+   return 0;
+}
